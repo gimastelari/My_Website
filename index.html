@@ -3,9 +3,109 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Your Name</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Playfair Display', serif;
+            background-color: #fff;
+            color: #222;
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 60px;
+            border-bottom: 1px solid #eee;
+        }
+        header h1 {
+            font-size: 28px;
+            font-weight: 700;
+            margin: 0;
+        }
+        nav a {
+            margin-left: 30px;
+            text-decoration: none;
+            color: #222;
+            font-weight: 500;
+        }
+        .hero {
+            height: 90vh;
+            background: url('your-photo.jpg') center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            text-align: center;
+            color: white;
+            padding: 0 20px;
+        }
+        .hero h2 {
+            font-size: 36px;
+            font-weight: 700;
+            margin: 10px 0 20px;
+        }
+        .hero p {
+            letter-spacing: 2px;
+            font-size: 14px;
+            margin: 0;
+        }
+        .hero button {
+            margin-top: 20px;
+            padding: 10px 25px;
+            font-size: 14px;
+            background: none;
+            border: 1px solid white;
+            color: white;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        .hero button:hover {
+            background: white;
+            color: black;
+        }
+        .page {
+            display: none;
+            padding: 60px;
+            font-size: 24px;
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
-    hello my name is ... HELLOOOOOOO!!!!!
+    <header>
+        <h1>your name</h1>
+        <nav>
+            <a href="#" onclick="showPage('home')">home</a>
+            <a href="#" onclick="showPage('about')">about me</a>
+            <a href="#" onclick="showPage('services')">services</a>
+            <a href="#" onclick="showPage('portfolio')">portfolio</a>
+            <a href="#" onclick="showPage('contact')">contact me</a>
+        </nav>
+    </header>
+
+    <div id="home" class="hero">
+        <p>LATEST ON THE BLOG</p>
+        <h2>navigating my early twenties:<br> heartbreak</h2>
+        <button>view</button>
+    </div>
+
+    <div id="about" class="page">About Me</div>
+    <div id="services" class="page">Services</div>
+    <div id="portfolio" class="page">Portfolio</div>
+    <div id="contact" class="page">Contact Me</div>
+
+    <script>
+        function showPage(pageId) {
+            const pages = document.querySelectorAll('.page');
+            const hero = document.getElementById('home');
+            pages.forEach(p => p.style.display = 'none');
+            hero.style.display = (pageId === 'home') ? 'flex' : 'none';
+            if (pageId !== 'home') {
+                document.getElementById(pageId).style.display = 'block';
+            }
+        }
+    </script>
 </body>
 </html>

@@ -71,6 +71,25 @@
             font-size: 24px;
             text-align: center;
         }
+        .post-title {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .post-date {
+            font-size: 14px;
+            color: #999;
+            margin-bottom: 30px;
+        }
+
+        .post-content {
+            max-width: 700px;
+            margin: 0 auto;
+            font-size: 16px;
+            line-height: 1.8;
+            text-align: left;
+        }
     </style>
 </head>
 <body>
@@ -82,6 +101,7 @@
             <a href="#" onclick="showPage('services')">services</a>
             <a href="#" onclick="showPage('portfolio')">portfolio</a>
             <a href="#" onclick="showPage('contact')">contact me</a>
+            <a href="#" onclick="showPage('blog')">blog</a>
         </nav>
     </header>
 
@@ -92,7 +112,28 @@
     <div id="services" class="page">Services</div>
     <div id="portfolio" class="page">Portfolio</div>
     <div id="contact" class="page">Contact Me</div>
-
+    <div id="blog-post" class="page" style="display: none;">
+        <h2 class="post-title">How I Built My First Website While in College</h2>
+        <p class="post-date">July 23, 2025</p>
+        <div class="post-content">
+          <p>When I first started learning web development, I had no idea how powerful HTML and CSS could be...</p>
+          <p>This project gave me confidence, direction, and a portfolio piece I could proudly show off.</p>
+          <p>Here’s what I learned along the way:</p>
+          <ul>
+            <li>Start simple — don’t overthink the design</li>
+            <li>Use GitHub Pages for easy hosting</li>
+            <li>Clean typography + spacing = ✨ aesthetic ✨</li>
+          </ul>
+          <p>I'll be sharing more stories like this. Stay tuned!</p>
+        </div>
+      </div>
+      <div id="blog" class="page">
+        <h2>Blog</h2>
+        <ul>
+          <li><a href="#" onclick="showPage('blog-post')">How I Built My First Website While in College</a></li>
+        </ul>
+      </div>
+      
     <script>
         function showPage(pageId) {
             const pages = document.querySelectorAll('.page');

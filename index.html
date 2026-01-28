@@ -35,6 +35,7 @@
       text-decoration: none;
       color: #222;
       font-weight: 500;
+      cursor: pointer;
     }
 
     /* ---------- HERO ---------- */
@@ -89,46 +90,8 @@
     .page {
       display: none;
       padding: 60px;
-      font-size: 24px;
+      font-size: 16px;
       text-align: center;
-    }
-
-    /* ---------- BLOG ---------- */
-    .blog-list {
-      max-width: 800px;
-      margin: 40px auto 0;
-      display: flex;
-      flex-direction: column;
-      gap: 30px;
-    }
-
-    .blog-item {
-      border: 1px solid #eee;
-      padding: 25px 30px;
-      text-align: left;
-      cursor: pointer;
-      transition: background 0.2s ease;
-    }
-
-    .blog-item:hover {
-      background-color: #f9f9f9;
-    }
-
-    .blog-title {
-      font-size: 20px;
-      font-weight: 700;
-      margin-bottom: 10px;
-    }
-
-    .blog-preview {
-      font-size: 14px;
-      color: #555;
-      line-height: 1.6;
-    }
-
-    .blog-read {
-      font-size: 12px;
-      color: #888;
     }
 
     /* ---------- CONTACT ---------- */
@@ -176,11 +139,11 @@
   <header>
     <h1>Giovanna Mastelari</h1>
     <nav>
-      <a href="#" onclick="showPage('home')">home</a>
-      <a href="#" onclick="showPage('about')">about me</a>
-      <a href="#" onclick="showPage('services')">services</a>
-      <a href="#" onclick="showPage('contact')">contact me</a>
-      <a href="#" onclick="showPage('blog')">blog</a>
+      <a href="javascript:void(0)" onclick="showPage('home')">home</a>
+      <a href="javascript:void(0)" onclick="showPage('about')">about me</a>
+      <a href="javascript:void(0)" onclick="showPage('services')">services</a>
+      <a href="javascript:void(0)" onclick="showPage('contact')">contact me</a>
+      <a href="javascript:void(0)" onclick="showPage('blog')">blog</a>
     </nav>
   </header>
 
@@ -200,22 +163,34 @@
 
   <!-- ABOUT -->
   <div id="about" class="page">
-    <!-- your existing about content unchanged -->
+    <h2>About Me</h2>
+    <p>Your about content goes here.</p>
   </div>
 
   <!-- SERVICES -->
   <div id="services" class="page">
-    <!-- your existing services content unchanged -->
+    <h2>Services</h2>
+    <p>Your services content goes here.</p>
   </div>
 
   <!-- CONTACT -->
   <div id="contact" class="page">
-    <!-- your existing contact form unchanged -->
+    <h2>Contact Me</h2>
+    <form class="contact-form">
+      <div class="form-row">
+        <input type="text" placeholder="First Name">
+        <input type="text" placeholder="Last Name">
+      </div>
+      <input type="email" placeholder="Email">
+      <textarea rows="5" placeholder="Message"></textarea>
+      <button type="submit">Send</button>
+    </form>
   </div>
 
   <!-- BLOG -->
   <div id="blog" class="page">
-    <!-- your existing blog content unchanged -->
+    <h2>Blog</h2>
+    <p>Blog content goes here.</p>
   </div>
 
   <!-- SCRIPT -->
@@ -231,6 +206,11 @@
         document.getElementById(pageId).style.display = 'block';
       }
     }
+
+    // Initialize site on load
+    document.addEventListener("DOMContentLoaded", function () {
+      showPage('home');
+    });
   </script>
 
 </body>
